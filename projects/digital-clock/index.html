@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        @font-face {
+            font-family: digitify;
+            src: url(Display\ Free\ TFB.ttf);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: digitify;
+            background-color: rgb(0, 0, 0);
+
+            color: cadetblue;
+        }
+
+        .clock-box {
+            display: flex;
+            position: relative;
+        }
+
+        .clock {
+            width: 120px;
+            text-align: right;
+            font-size: 100px;
+        }
+
+        #seconds {
+            width: 225px;
+            display: flex;
+        }
+
+        .second {
+            width: 80px;
+            text-align: right;
+        }
+
+        .date {
+            padding: 15px;
+            width: 175px;
+        }
+
+        p {
+            font-size: 35px;
+            line-height: 65px;
+        }
+
+        span {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 100px;
+        }
+
+        #ampm {
+            position: absolute;
+            top: 0;
+            right: 40px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="clock-box" class="clock-box">
+        <div class="clock" id="hours"></div><span>:</span>
+        <div class="clock" id="minutes"></div><span>:</span>
+        <div class="clock" id="seconds"></div>
+        <div id="ampm">AM</div>
+    </div>
+    <div class="date">
+        <p id="date"></p>
+    </div>
+
+    <script type="text/javascript">
+        let hourText = document.getElementById('hours');
+        let minuteText = document.getElementById('minutes');
+        let secondText = document.getElementById('seconds');
+
+        document.getElementById('date').innerHTML = new Date().toDateString();
+
+        function showClock() {
+
+            let neil = document.querySelectorAll('.second');
+            neil.forEach(n => n.remove());
+
+            let time = new Date();
+            let cHour = time.getHours();
+            let cMinute = time.getMinutes();
+
+            if (cHour >= 12) {
+                document.getElementById('ampm').innerHTML = 'PM';
+            }
+
+            if (cHour > 12) {
+                hourText.innerHTML = cHour - 12;
+            } else {
+                hourText.innerHTML = cHour;
+            }
+
+
+            minuteText.innerText = cMinute;
+
+            let str = time.getSeconds().toString();
+            if (str.length <= 1) {
+                let div = document.createElement('div');
+                let textnode = document.createTextNode(0);
+                div.appendChild(textnode);
+                div.className = 'clock second';
+                secondText.appendChild(div);
+            }
+
+            for (let i = 0; i < str.length; i++) {
+                let div = document.createElement('div');
+                let textnode = document.createTextNode(str[i]);
+                div.appendChild(textnode);
+                div.className = 'clock second';
+                secondText.appendChild(div);
+            }
+        }
+
+        setInterval(() => {
+            showClock();
+        }, 1000)
+
+
+    </script>
+
+</body>
+
+</html>
