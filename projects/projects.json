@@ -1,0 +1,38 @@
+{
+    "projects": [
+        {
+            "project_name": "Css Text Styler",
+            "project_description": "This is a CSS text styler. You can style paragraph text using GUI(Graphics User Interface). Currently you can:\n> Edit Text\n> Adjust font size\n> Change color\n> Change font family\nand many more.\nUh, you can also download the text as transparent background png.",
+            "project_technologies": [
+                "Python",
+                "JavaScript",
+                "HTML",
+                "CSS"
+            ],
+            "project_image": "project1_image.jpg",
+            "project_url": "https://example.com/project1"
+        },
+        {
+            "project_name": "Project 2",
+            "project_description": "This is the second project.",
+            "project_technologies": [
+                "Java",
+                "React",
+                "Redux"
+            ],
+            "project_image": "project2_image.jpg",
+            "project_url": "https://example.com/project2"
+        },
+        {
+            "project_name": "Project 3",
+            "project_description": "This is the third project.",
+            "project_technologies": [
+                "C#",
+                "ASP.NET",
+                "SQL"
+            ],
+            "project_image": "project3_image.jpg",
+            "project_url": "https://example.com/project3"
+        }
+    ]
+}
