@@ -4,35 +4,26 @@
             "project_name": "Css Text Styler",
             "project_description": "This is a CSS text styler. You can style paragraph text using GUI(Graphics User Interface). Currently you can:\n> Edit Text\n> Adjust font size\n> Change color\n> Change font family\nand many more.\nUh, you can also download the text as transparent background png.",
             "project_technologies": [
-                "Python",
+                "JavaScript",
+                "HTML",
+                "CSS",
+                "html2canvas"
+            ],
+            "project_image": "https://res.cloudinary.com/dqv4l1mkj/image/upload/v1689782909/html-css-js-projects/html2canvas_fyrqkt.png",
+            "project_url": "https://rb.gy/1u1i7",
+            "category": "project"
+        },
+        {
+            "project_name": "Wave Cafe",
+            "project_description": "A web template to run coffee shop. A simple, clean, and attractive design.",
+            "project_technologies": [
                 "JavaScript",
                 "HTML",
                 "CSS"
             ],
-            "project_image": "project1_image.jpg",
-            "project_url": "https://example.com/project1"
-        },
-        {
-            "project_name": "Project 2",
-            "project_description": "This is the second project.",
-            "project_technologies": [
-                "Java",
-                "React",
-                "Redux"
-            ],
-            "project_image": "project2_image.jpg",
-            "project_url": "https://example.com/project2"
-        },
-        {
-            "project_name": "Project 3",
-            "project_description": "This is the third project.",
-            "project_technologies": [
-                "C#",
-                "ASP.NET",
-                "SQL"
-            ],
-            "project_image": "project3_image.jpg",
-            "project_url": "https://example.com/project3"
+            "project_image": "https://res.cloudinary.com/dqv4l1mkj/image/upload/v1689783901/html-css-js-projects/wave-cafe_veci9v.png",
+            "project_url": "https://rb.gy/ym8ql",
+            "category": "template"
         }
     ]
 }

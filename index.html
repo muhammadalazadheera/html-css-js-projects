@@ -27,21 +27,7 @@
 				<p>Home > Projects</p>
 			</div>
 			<div id="project-items">
-				<div class="project-item">
-					<div class="project-image">
-						<img src="assets/img/html2canvas.png" alt="">
-					</div>
-					<div class="project-details">
-						<h1 id="project-heading">Simple CSS Text Styler</h1>
-						<p id="project-desc">This is a CSS text styler. You can style paragraph text using GUI(Graphics
-							User Interface). Currently you can:<br>> Edit Text<br>> Adjust font size<br>> Change
-							color<br>> Change font family<br>and many more.<br>Uh, you can also download the text as
-							transparent background png.</p>
-						<p id="project-tech"><span class="tech">HTML</span><span class="tech">CSS</span><span
-								class="tech">JS</span><span class="tech">html2canvas</span></p>
-						<a id="project-link" href="#">Preview</a>
-					</div>
-				</div>
+
 			</div>
 		</div>
 		<div id="right-nav">
@@ -52,7 +38,43 @@
 		</div>
 	</section>
 	<script src="assets/js/main.js"></script>
+	<script>
+		fetch('projects/projects.json')
+			.then(response => response.json())
+			.then(data => {
+				const projects = data.projects;
 
+				// Access the container element where you want to display the project details
+				const container = document.querySelector('#project-items');
+
+				// Iterate over the projects array
+				for (let i = 0; i < projects.length; i++) {
+					const project = projects[i];
+
+					// Create HTML markup using template literals
+					const projectHTML = `
+					<div class="project-item">
+						<div class="project-image">
+							<img src="${project.project_image}" alt="">
+						</div>
+						<div class="project-details">
+							<h1 id="project-heading">${project.project_name}</h1>
+							<p id="project-desc">${project.project_description}</p>
+							<p id="project-tech">${project.project_technologies.map(tech => `<span class="tech">${tech}</span>`).join('')}</p>
+							<a id="project-link" href="${project.project_url}" target="_blank">Preview</a>
+						</div>
+					</div>
+					`;
+
+					// Append project details to the container element
+					container.innerHTML += projectHTML;
+				}
+			})
+			.catch(error => {
+				console.error('Error fetching projects.json:', error);
+			});
+
+	</script>
 </body>
 
 </html>
