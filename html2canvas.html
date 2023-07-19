@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML CSS Javascript Projects</title>
+    <link rel="stylesheet" href="projects/html2canvas/assets/css/style.css">
+</head>
+
+<body>
+    <section id="main">
+        <div class="left-section">
+            <div class="input-box">
+                <label for="text-box">Enter Text</label>
+                <textarea name="name" id="text-box" rows="5">Enter Your Text</textarea>
+            </div>
+
+            <div class="input-box">
+                <label for="color">Color</label>
+                <input type="color" name="color" id="color" value="#004AAD">
+            </div>
+
+            <div class="input-box">
+                <label for="ls">Letter Spacing [In Pixel]</label>
+                <input type="number" id="ls" value="0">
+            </div>
+
+            <div class="input-box">
+                <label for="fs">Font Size [In Pixel]</label>
+                <input type="number" id="fs" value="80">
+            </div>
+
+            <div class="input-box">
+                <label for="font">Select A Font</label>
+                <select name="font" id="font">
+                    <option disabled selected>Select A Font</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+                <label for="tt">Text Transformation</label>
+                <select name="font" id="tt">
+                    <option disabled selected>Text Transformatoin</option>
+                    <option value="uppercase">Uppercase</option>
+                    <option value="lowercase">Lowercase</option>
+                    <option value="capitalize">Capitalize</option>
+                </select>
+            </div>
+
+            <button id="downloadButton" type="button">Download</button>
+
+        </div>
+        <div class="right-section">
+            <div class="canvas-box">
+                <div id="canvas">
+                    <h1 id="text"></h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="projects/html2canvas/assets/js/main.js"></script>
+    <script src="projects/html2canvas/assets/js/html2canvas.js"></script>
+    <script>
+        document.getElementById('downloadButton').addEventListener('click', downloadText);
+        function downloadText(e) {
+            e.preventDefault();
+            html2canvas(document.getElementById('canvas'), {
+                backgroundColor: null,
+                onclone: null,
+            }).then(function (canvas) {
+                document.body.appendChild(canvas);
+                var link = document.createElement('a');
+                link.download = 'filename.png';
+                link.href = canvas.toDataURL().replace('image/png', 'image/octet-stream');
+                link.target = '_blank';
+                link.click();
+            });
+        }
+    </script>
+</body>
+
+</html>

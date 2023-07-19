@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @font-face {
+      font-family: wild;
+      src: url('assets/fonts/The\ Wild\ Team.ttf');
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      overflow: hidden;
+    }
+
+    .text-video {
+      position: relative;
+    }
+
+    .text-video .text {
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      overflow: hidden;
+      background: #fff;
+      mix-blend-mode: screen;
+      overflow: hidden;
+    }
+
+    .text-video .text p {
+      font-size: 20vw;
+      line-height: 1;
+      font-weight: 900;
+      font-family: wild;
+    }
+
+    video {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="text-video">
+    <video id="one" autoplay muted loop poster="./assets/videos/background.jpg">
+      <source src="./assets/videos/clown.mp4">
+    </video>
+    <div class="text">
+      <p>AFSHEEN</p>
+    </div>
+  </div>
+  <a href="transparent-bg-video.html" class="other" target="_blank">Still Background</a>
+</body>
+
+</html>
